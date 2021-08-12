@@ -2,7 +2,7 @@ import React from "react"
 import ReactDOM from "react-dom"
 
 import App from "./App"
-import UsernameContext from "./UsernameContext"
+import { UsernameContextProvider } from "./UsernameContext"
 
 /**
  * Challenge: Set up context to save the user's username and pass it to anywhere that is currently hardcoding "Username".
@@ -12,7 +12,7 @@ import UsernameContext from "./UsernameContext"
  */
 
 ReactDOM.render(
-    <UsernameContext.Provider value={"Mike"}>
+    <UsernameContextProvider>
         <App />
-    </UsernameContext.Provider>, 
+    </UsernameContextProvider>,
     document.getElementById("root"))

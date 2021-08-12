@@ -1,16 +1,26 @@
 import React from 'react'
-import UsernameContext from "./UsernameContext"
+import { UsernameContextConsumer } from "./UsernameContext"
 
 function Main() {
     return (
-        <UsernameContext.Consumer>
-            {username => (
-                <main>
-                    <p className="main">No new notifications, {username}! 🎉</p>
-                </main>
+        <UsernameContextConsumer>
+            {({ username, changUsername }) => (
+                <div>
+                    <main>
+                        <p className="main">No new notifications, {username}! 🎉</p>
+                    </main>
+                    <input
+                        type="text"
+                        name="username"
+                        placeholder="New username"
+                        value={this.state.newUsername}
+                        onChange={this.handleChange}
+                    />
+                    <button>Change Username</button>
+                </div>
             )}
 
-        </UsernameContext.Consumer>
+        </UsernameContextConsumer>
     )
 }
 
